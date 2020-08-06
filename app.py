@@ -134,10 +134,10 @@ class DataAdd(Frame):
     def submit(self):
         try:
             mydb = mysql.connector.connect(
-                host='192.168.1.21',
-                user='ZaneColeRiley',
-                password='CadenRiley214569',
-                database='Identity'
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
             )
             cursor = mydb.cursor()
 
@@ -174,11 +174,11 @@ class DataAdd(Frame):
 
     def delete(self):
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='Identity'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         cursor = mydb.cursor()
         cursor.execute("DELETE from individuals WHERE oid=" + self.delete_record.get())
 
@@ -188,11 +188,11 @@ class DataAdd(Frame):
 
     def update(self):
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='Identity'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         cursor = mydb.cursor()
 
         record_id = self.delete_record.get()
@@ -218,11 +218,11 @@ class DataAdd(Frame):
 
     def edit(self):
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='Identity'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         cursor = mydb.cursor()
 
         record_id = self.delete_record.get()
@@ -335,11 +335,11 @@ class UpdateData(Frame):
 
     def edit(self):
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='Identity'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         cursor = mydb.cursor()
 
         cursor.execute(""" UPDATE Identity.individuals SET
@@ -372,11 +372,11 @@ class UpdateData(Frame):
 
     def id(self):
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='Identity'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         cursor = mydb.cursor()
 
         record_id = self.Id.get()
@@ -496,11 +496,11 @@ class Contact(Frame):
 
     def id(self):
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='Identity'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         cursor = mydb.cursor()
 
         record_id = self.ID_Set.get()
@@ -520,10 +520,10 @@ class Contact(Frame):
     def add(self):
         try:
             mydb = mysql.connector.connect(
-                host='192.168.1.21',
-                user='ZaneColeRiley',
-                password='CadenRiley214569',
-                database='Identity'
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
             )
             cursor = mydb.cursor()
 
@@ -562,11 +562,11 @@ class TwitchHomePage(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='twitch'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         self.cursor = mydb.cursor()
 
         self.home_label = Label(self, text="Twitch Database HomePage", font=LARGE_FONT)
@@ -638,11 +638,11 @@ class GameData(Frame):
 
     def load_game(self):
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='twitch'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         cursor = mydb.cursor()
         gamenameid = self.Game_Name.get()
 
@@ -755,11 +755,11 @@ class StreamInfo(Frame):
 
     def load_entry(self):
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='twitch'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         cursor = mydb.cursor()
 
         cursor.execute(f"SELECT * FROM twitch.streaminfo WHERE StartDate='{self.Start_date.get()}';")
@@ -776,10 +776,10 @@ class StreamInfo(Frame):
     def add_entry(self):
         try:
             mydb = mysql.connector.connect(
-                host='192.168.1.21',
-                user='ZaneColeRiley',
-                password='CadenRiley214569',
-                database='twitch'
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
             )
             cursor = mydb.cursor()
 
@@ -864,11 +864,11 @@ class StreamData(Frame):
 
     def load_entry(self):
         mydb = mysql.connector.connect(
-            host='192.168.1.21',
-            user='ZaneColeRiley',
-            password='CadenRiley214569',
-            database='twitch'
-        )
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
+            )
         cursor = mydb.cursor()
 
         cursor.execute(f"SELECT * FROM twitch.streamdata WHERE Date='{self.Date.get()}';")
@@ -886,10 +886,10 @@ class StreamData(Frame):
     def add_entry(self):
         try:
             mydb = mysql.connector.connect(
-                host='192.168.1.21',
-                user='ZaneColeRiley',
-                password='CadenRiley214569',
-                database='twitch'
+                host='yourHost',
+                user='yourUser',
+                password='yourPass',
+                database='yourDataBase'
             )
             cursor = mydb.cursor()
 
